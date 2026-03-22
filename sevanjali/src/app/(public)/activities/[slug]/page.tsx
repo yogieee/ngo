@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getActivityBySlug, getActiveActivities } from "@/lib/actions/activities";
+import { getActivityBySlug } from "@/lib/actions/activities";
 import { iconMap } from "@/lib/icon-map";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,10 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const activities = await getActiveActivities();
-  return activities.map((a) => ({ slug: a.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function ActivityDetailPage({ params }: Props) {
   const { slug } = await params;
