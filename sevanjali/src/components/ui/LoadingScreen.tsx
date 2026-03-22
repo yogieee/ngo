@@ -2,19 +2,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function shouldShowLoading() {
+  if (typeof window === "undefined") return false;
+  return !sessionStorage.getItem("sevanjali-loaded");
+}
+
 export function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(shouldShowLoading);
 
   useEffect(() => {
-    // Only show loading screen once per session (new tab/window)
-    const hasLoaded = sessionStorage.getItem("sevanjali-loaded");
-    if (hasLoaded) return;
+    if (!isLoading) return;
 
-    setIsLoading(true);
     sessionStorage.setItem("sevanjali-loaded", "true");
     const timer = setTimeout(() => setIsLoading(false), 2200);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isLoading]);
 
   // Prevent scrolling while loading
   useEffect(() => {
