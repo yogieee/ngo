@@ -55,11 +55,6 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
-  }
-
-  *, *::before, *::after {
-    cursor: none !important;
   }
 
   .scrollbar-none::-webkit-scrollbar {
@@ -119,4 +114,32 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.5);
   }
+}
+
+/* Public site — hide cursor for custom cursor effect */
+.public-layout,
+.public-layout *,
+.public-layout *::before,
+.public-layout *::after {
+  cursor: none !important;
+}
+
+/* Admin — force black text and normal cursor everywhere including portals */
+.admin-layout,
+.admin-layout *,
+[data-radix-portal],
+[data-radix-portal] * {
+  color: #000 !important;
+  cursor: auto !important;
+}
+
+.admin-layout input,
+.admin-layout textarea,
+.admin-layout select,
+.admin-layout option,
+[data-radix-portal] input,
+[data-radix-portal] textarea,
+[data-radix-portal] select,
+[data-radix-portal] option {
+  color: #000 !important;
 }

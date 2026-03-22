@@ -9,9 +9,17 @@ import { GaneshotsavaSection } from "@/components/sections/GaneshotsavaSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { VolunteerSection } from "@/components/sections/VolunteerSection";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { UpcomingEventsSection } from "@/components/sections/UpcomingEventsSection";
+import { EventTicker } from "@/components/ui/EventTicker";
+import { getActiveActivities } from "@/lib/actions/activities";
+import { getUpcomingEvents } from "@/lib/actions/events";
 
+export default async function HomePage() {
+  const [activities, upcomingEvents] = await Promise.all([
+    getActiveActivities(),
+    getUpcomingEvents(),
+  ]);
 
-export default function HomePage() {
   return (
     <main>
       {/* Hero stays sticky — everything below scrolls over it */}
@@ -20,14 +28,18 @@ export default function HomePage() {
       {/* Content layers — higher z-index so they scroll over the hero */}
       <div className="relative" style={{ zIndex: 2 }}>
         <ImpactStrip />
+        {upcomingEvents.length > 0 && <EventTicker events={upcomingEvents} />}
         <DiagonalDivider color="#F3F0E4" />
         <AboutSection />
         <DiagonalDivider flip color="#1A2118" />
-        <ActivitiesSection />
+        <ActivitiesSection activities={activities} />
         <DiagonalDivider color="#F3F0E4" />
         <TestimonialsSection />
         <FounderSection />
         <GaneshotsavaSection />
+        {upcomingEvents.length > 0 && (
+          <UpcomingEventsSection events={upcomingEvents} />
+        )}
         <GallerySection />
       </div>
 

@@ -1,23 +1,15 @@
 "use client";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { useParallax } from "@/hooks/useParallax";
-import { siteData } from "@/lib/data";
-import {
-  Heart,
-  GraduationCap,
-  Droplets,
-  HandHeart,
-  CreditCard,
-  Eye,
-} from "lucide-react";
+import { iconMap } from "@/lib/icon-map";
 import { ArrowRight } from "lucide-react";
+import type { Activity } from "@/lib/actions/activities";
 
-const icons = [Heart, GraduationCap, Droplets, HandHeart, CreditCard, Eye];
-
-export function ActivitiesSection() {
+export function ActivitiesSection({ activities }: { activities: Activity[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const bgY = useParallax(sectionRef, -40);
 
@@ -45,11 +37,12 @@ export function ActivitiesSection() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {siteData.activities.map((activity, index) => {
-            const Icon = icons[index];
+          {activities.map((activity, index) => {
+            const Icon = iconMap[activity.icon_name] || iconMap.Heart;
             return (
-              <div
-                key={activity.title}
+              <Link
+                href={`/activities/${activity.slug}`}
+                key={activity.id}
                 className="group relative p-5 sm:p-8 glass rounded-xl cursor-pointer transition-all duration-300 hover:bg-saffron hover:border-saffron/30"
               >
                 <span className="font-display text-sm text-ash group-hover:text-earth/40 transition-colors">
@@ -69,7 +62,7 @@ export function ActivitiesSection() {
                 <span className="flex items-center gap-2 text-saffron group-hover:text-earth mt-6 font-body text-sm font-medium transition-all group-hover:gap-4">
                   Learn more <ArrowRight size={16} />
                 </span>
-              </div>
+              </Link>
             );
           })}
         </div>

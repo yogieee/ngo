@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Cinzel } from "next/font/google";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LoadingScreen } from "@/components/ui/LoadingScreen";
-import { OrganizationJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -102,14 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable} ${cinzel.variable}`}
     >
-      <body>
-        <OrganizationJsonLd />
-        <LoadingScreen />
-        <CustomCursor />
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,48 +1,20 @@
-"use client";
 import Image from "next/image";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { siteData } from "@/lib/data";
+import { getUpcomingEvents } from "@/lib/actions/events";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 
-const upcomingEvents = [
-  {
-    title: "Free Medical Camp",
-    date: "1st & 3rd Sunday of Every Month",
-    location: "Farangipete Community Hall",
-    description:
-      "Regular bi-monthly free medical camp featuring general health check-ups, specialist consultations, and free medicine distribution for the community.",
-    type: "Healthcare",
-  },
-  {
-    title: "Blood Donation Drive",
-    date: "To be announced",
-    location: "Farangipete",
-    description:
-      "Upcoming blood donation drive in collaboration with local hospitals. Help save lives by donating blood.",
-    type: "Healthcare",
-  },
-  {
-    title: "Educational Felicitation",
-    date: "To be announced",
-    location: "Farangipete Community Hall",
-    description:
-      "Annual felicitation ceremony recognising academic achievements of scholarship recipients and honour students.",
-    type: "Education",
-  },
-  {
-    title: "Community Outreach Programme",
-    date: "To be announced",
-    location: "Various locations, Bantwal Taluk",
-    description:
-      "Ration distribution and welfare assistance for underprivileged families across the taluk.",
-    type: "Community",
-  },
-];
+export const metadata = {
+  title: "Events",
+  description:
+    "Events and celebrations by Sevanjali Prathishtana — Ganeshotsava, free medical camps, blood donation drives, and community outreach in Farangipete, Karnataka.",
+};
 
-export default function EventsPage() {
+export default async function EventsPage() {
   const { ganeshotsava } = siteData;
+  const upcomingEvents = await getUpcomingEvents();
 
   return (
     <main>
@@ -132,50 +104,52 @@ export default function EventsPage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="bg-lightbg py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <ScrollReveal>
-            <SectionLabel className="text-saffron mb-4">
-              Upcoming Events
-            </SectionLabel>
-            <h2 data-cursor-grow className="font-display text-section font-bold italic text-earth leading-[1.05] mb-16">
-              What&apos;s Coming Up
-            </h2>
-          </ScrollReveal>
+      {upcomingEvents.length > 0 && (
+        <section className="bg-lightbg py-24 lg:py-32">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <ScrollReveal>
+              <SectionLabel className="text-saffron mb-4">
+                Upcoming Events
+              </SectionLabel>
+              <h2 data-cursor-grow className="font-display text-section font-bold italic text-earth leading-[1.05] mb-16">
+                What&apos;s Coming Up
+              </h2>
+            </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {upcomingEvents.map((event, i) => (
-              <ScrollReveal key={event.title} delay={i * 100}>
-                <div className="glass-light rounded-xl p-5 sm:p-8 group hover:bg-white/60 transition-all duration-300 h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="bg-saffron/10 text-saffron px-3 py-1 rounded-full font-body text-xs font-medium">
-                      {event.type}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-[24px] font-bold text-earth mb-3">
-                    {event.title}
-                  </h3>
-                  <p className="font-body text-sm text-earth/60 leading-relaxed mb-4">
-                    {event.description}
-                  </p>
-                  <div className="space-y-2 mt-auto">
-                    <div className="flex items-center gap-2 text-earth/50">
-                      <Calendar size={14} />
-                      <span className="font-body text-xs">{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-earth/50">
-                      <MapPin size={14} />
-                      <span className="font-body text-xs">
-                        {event.location}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {upcomingEvents.map((event, i) => (
+                <ScrollReveal key={event.id} delay={i * 100}>
+                  <div className="glass-light rounded-xl p-5 sm:p-8 group hover:bg-white/60 transition-all duration-300 h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="bg-saffron/10 text-saffron px-3 py-1 rounded-full font-body text-xs font-medium">
+                        {event.type}
                       </span>
                     </div>
+                    <h3 className="font-display text-[24px] font-bold text-earth mb-3">
+                      {event.title}
+                    </h3>
+                    <p className="font-body text-sm text-earth/60 leading-relaxed mb-4">
+                      {event.description}
+                    </p>
+                    <div className="space-y-2 mt-auto">
+                      <div className="flex items-center gap-2 text-earth/50">
+                        <Calendar size={14} />
+                        <span className="font-body text-xs">{event.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-earth/50">
+                        <MapPin size={14} />
+                        <span className="font-body text-xs">
+                          {event.location}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Past Event Gallery */}
       <section className="bg-earth py-24 lg:py-32">

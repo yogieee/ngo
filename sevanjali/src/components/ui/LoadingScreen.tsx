@@ -3,9 +3,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // Only show loading screen once per session (new tab/window)
+    const hasLoaded = sessionStorage.getItem("sevanjali-loaded");
+    if (hasLoaded) return;
+
+    setIsLoading(true);
+    sessionStorage.setItem("sevanjali-loaded", "true");
     const timer = setTimeout(() => setIsLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
