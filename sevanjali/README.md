@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sevanjali Prathishtana
+
+Official website for **Sevanjali Prathishtana**, a community-driven NGO from Farangipete, Bantwal Taluk, Dakshina Kannada, Karnataka — serving humanity through healthcare, education, and social welfare since 1993.
+
+## About
+
+Sevanjali Prathishtana has been a beacon of hope for over three decades, founded by Sri Krishna Kumar Punja. Key highlights:
+
+- **344+ Free Medical Camps** — Bi-monthly healthcare for underprivileged families
+- **10,000+ Lives Impacted** — Through healthcare, education, and welfare
+- **50+ Social Initiatives** — Blood donation drives, scholarships, patient assistance
+- **Annual Ganeshotsava** — A cultural celebration uniting communities since 1993
+
+## Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **UI Components:** Radix UI
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd sevanjali
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Description |
+|-------|-------------|
+| `/` | Home — Hero, impact stats, about, activities, testimonials, gallery |
+| `/about` | Mission, vision, values, timeline, founder |
+| `/activities` | Healthcare, education, and welfare programmes |
+| `/events` | Ganeshotsava, medical camps, upcoming events |
+| `/donate` | Bank transfer & UPI donation details |
+| `/contact` | Contact form, location map, quick connect |
+| `/gallery` | Photo gallery of events and camps |
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deployed on [Vercel](https://vercel.com). Set **Root Directory** to `sevanjali` in project settings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Phone:** +91 94485 02319
+- **Email:** sevanjali.farangipete@gmail.com
+- **Location:** Farangipet Post, Bantwal Taluk - 574143, D.K., Karnataka, India
