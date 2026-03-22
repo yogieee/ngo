@@ -15,9 +15,17 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Our Activities — Sevanjali Prathishtana",
+  title: "Our Activities",
   description:
-    "Explore the healthcare, education, and social welfare activities of Sevanjali Prathishtana serving Farangipete since 1993.",
+    "Explore the healthcare, education, and social welfare activities of Sevanjali Prathishtana — free medical camps, scholarships, blood donation drives in Farangipete since 1993.",
+  alternates: {
+    canonical: "/activities",
+  },
+  openGraph: {
+    title: "Activities — Sevanjali Prathishtana",
+    description:
+      "Free medical camps, educational scholarships, blood donation drives, and community welfare programmes in Farangipete, Karnataka.",
+  },
 };
 
 const icons = [Heart, GraduationCap, Droplets, HandHeart, CreditCard, Eye];

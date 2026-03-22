@@ -6,9 +6,17 @@ import { siteData } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About Us — Sevanjali Prathishtana",
+  title: "About Us",
   description:
     "Learn about Sevanjali Prathishtana's three decades of selfless service in healthcare, education, and community welfare in Farangipete, Karnataka.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Sevanjali Prathishtana",
+    description:
+      "Three decades of selfless service in healthcare, education, and community welfare in Farangipete, Karnataka since 1993.",
+  },
 };
 
 const milestones = [
