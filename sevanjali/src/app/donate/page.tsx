@@ -58,7 +58,7 @@ export default function DonatePage() {
   return (
     <main>
       {/* Hero Banner */}
-      <section className="relative bg-earth pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-earth pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         {/* Subtle gradient accent */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-saffron/5 to-transparent pointer-events-none" />
         <div className="absolute inset-0 noise-overlay" />
@@ -99,7 +99,7 @@ export default function DonatePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {/* Bank Transfer Card */}
             <ScrollReveal>
-              <div className="glass rounded-xl p-8 lg:p-12">
+              <div className="glass rounded-xl p-5 sm:p-8 lg:p-12">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 bg-saffron/10 rounded-sm flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-saffron" />
@@ -157,7 +157,7 @@ export default function DonatePage() {
 
             {/* UPI Card */}
             <ScrollReveal delay={150}>
-              <div className="glass rounded-xl p-8 lg:p-12">
+              <div className="glass rounded-xl p-5 sm:p-8 lg:p-12">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 bg-saffron/10 rounded-sm flex items-center justify-center">
                     <Smartphone className="w-6 h-6 text-saffron" />

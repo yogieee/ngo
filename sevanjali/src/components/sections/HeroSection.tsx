@@ -51,7 +51,7 @@ export function HeroSection() {
 
           {/* Content with scroll-linked fade */}
           <motion.div
-            className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-32 pb-20 w-full"
+            className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 pt-28 sm:pt-32 pb-10 sm:pb-20 w-full"
             style={{ y: contentY, opacity: contentOpacity }}
           >
             <div className="max-w-[720px]">
@@ -62,7 +62,7 @@ export function HeroSection() {
               <h1
                 data-cursor-grow
                 className="font-display text-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] leading-[0.95] tracking-[-2px]"
-                style={{ fontSize: "clamp(64px, 10vw, 100px)" }}
+                style={{ fontSize: "clamp(40px, 10vw, 100px)" }}
               >
                 <AnimatedWord delay={0} italic>
                   Serving
@@ -75,7 +75,7 @@ export function HeroSection() {
                 </AnimatedWord>
               </h1>
 
-              <p className="font-body text-lg text-cream/70 max-w-[520px] font-light leading-relaxed mt-8">
+              <p className="font-body text-base sm:text-lg text-cream/70 max-w-[520px] font-light leading-relaxed mt-6 sm:mt-8">
                 A community-driven NGO serving Farangipete through healthcare,
                 education, and social welfare since 1993.
               </p>
@@ -84,11 +84,11 @@ export function HeroSection() {
               <RotatingQuotes />
 
               {/* Stat Pills */}
-              <div className="flex gap-3 flex-wrap mt-8">
+              <div className="flex gap-2 sm:gap-3 flex-wrap mt-6 sm:mt-8">
                 {["30+ Years", "344+ Camps", "Thousands Helped"].map((s) => (
                   <span
                     key={s}
-                    className="bg-saffron/10 text-saffron border border-saffron/20 px-4 py-1.5 rounded-full font-body text-sm backdrop-blur-md"
+                    className="bg-saffron/10 text-saffron border border-saffron/20 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full font-body text-xs sm:text-sm backdrop-blur-md"
                   >
                     {s}
                   </span>
@@ -96,7 +96,7 @@ export function HeroSection() {
               </div>
 
               {/* CTAs */}
-              <div className="flex gap-4 mt-10 flex-wrap">
+              <div className="flex gap-3 sm:gap-4 mt-8 sm:mt-10 flex-wrap">
                 <MagneticButton variant="outline" href="#about">
                   Our Story
                 </MagneticButton>

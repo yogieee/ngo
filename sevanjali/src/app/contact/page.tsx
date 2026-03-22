@@ -42,7 +42,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-earth pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-earth pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 noise-overlay" />
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-[680px]">
@@ -259,7 +259,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="glass-light rounded-xl overflow-hidden aspect-[4/3]">
+                <div className="glass-light rounded-xl overflow-hidden aspect-video sm:aspect-4/3">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15570.5!2d75.0!3d12.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFarangipete!5e0!3m2!1sen!2sin!4v1234567890"
                     width="100%"

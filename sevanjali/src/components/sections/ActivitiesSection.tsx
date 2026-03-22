@@ -50,7 +50,7 @@ export function ActivitiesSection() {
             return (
               <div
                 key={activity.title}
-                className="group relative p-8 glass rounded-xl cursor-pointer transition-all duration-300 hover:bg-saffron hover:border-saffron/30"
+                className="group relative p-5 sm:p-8 glass rounded-xl cursor-pointer transition-all duration-300 hover:bg-saffron hover:border-saffron/30"
               >
                 <span className="font-display text-sm text-ash group-hover:text-earth/40 transition-colors">
                   {String(index + 1).padStart(2, "0")}
@@ -58,7 +58,7 @@ export function ActivitiesSection() {
 
                 <Icon className="w-8 h-8 text-saffron group-hover:text-earth transition-colors mt-4" />
 
-                <h3 className="font-display text-[28px] font-bold text-cream group-hover:text-earth mt-3 transition-colors">
+                <h3 className="font-display text-xl sm:text-[28px] font-bold text-cream group-hover:text-earth mt-3 transition-colors">
                   {activity.title}
                 </h3>
 

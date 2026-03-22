@@ -56,7 +56,7 @@ export function VolunteerSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {opportunities.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 100}>
-              <div className="bg-cream/5 border border-cream/10 rounded-sm p-8 hover:bg-cream/10 transition-colors h-full">
+              <div className="bg-cream/5 border border-cream/10 rounded-sm p-5 sm:p-8 hover:bg-cream/10 transition-colors h-full">
                 <item.icon className="w-8 h-8 text-saffron mb-5" />
                 <h3 className="font-display text-lg font-semibold text-cream">
                   {item.title}

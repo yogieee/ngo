@@ -12,11 +12,11 @@ export function ImpactStrip() {
         {siteData.stats.map((stat, i) => (
           <div
             key={stat.label}
-            className={`px-6 py-10 lg:py-14 text-center ${
+            className={`px-4 sm:px-6 py-8 sm:py-10 lg:py-14 text-center ${
               i < siteData.stats.length - 1
-                ? "border-r border-cream/10"
+                ? "lg:border-r border-cream/10"
                 : ""
-            }`}
+            } ${i % 2 === 0 && i < siteData.stats.length - 1 ? "border-r sm:border-r" : ""}`}
           >
             <p className="font-display text-stat text-cream">
               <StatCounter end={stat.value} suffix={stat.suffix} />

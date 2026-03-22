@@ -50,9 +50,9 @@ export function TestimonialsSection() {
           {siteData.testimonials.map((t) => (
             <div
               key={t.name}
-              className="snap-start shrink-0 w-[min(560px,85vw)] glass-light rounded-xl border-l-4 border-saffron p-10 relative shadow-lg shadow-earth/5"
+              className="snap-start shrink-0 w-[min(560px,85vw)] glass-light rounded-xl border-l-4 border-saffron p-6 sm:p-10 relative shadow-lg shadow-earth/5"
             >
-              <span className="font-display text-[120px] leading-none text-saffron/20 absolute top-4 left-6 select-none">
+              <span className="font-display text-[80px] sm:text-[120px] leading-none text-saffron/20 absolute top-2 left-4 sm:top-4 sm:left-6 select-none">
                 &ldquo;
               </span>
               <p className="font-body text-base font-light leading-relaxed text-earth/80 relative z-10 mt-8">

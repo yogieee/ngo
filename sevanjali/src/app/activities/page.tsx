@@ -95,7 +95,7 @@ export default function ActivitiesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-earth pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-earth pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-saffron/5 to-transparent pointer-events-none" />
         <div className="absolute inset-0 noise-overlay" />
 
@@ -167,14 +167,14 @@ export default function ActivitiesPage() {
               const Icon = activity.icon;
               return (
                 <ScrollReveal key={activity.title} delay={i * 100}>
-                  <div className="glass-light rounded-xl p-8 lg:p-12">
-                    <div className="flex flex-col lg:flex-row gap-8">
+                  <div className="glass-light rounded-xl p-5 sm:p-8 lg:p-12">
+                    <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
                       <div className="flex-1">
                         <div className="flex items-center gap-4 mb-4">
                           <div className="w-14 h-14 bg-saffron/10 rounded-xl flex items-center justify-center">
                             <Icon className="w-7 h-7 text-saffron" />
                           </div>
-                          <h3 className="font-display text-[28px] font-bold text-earth">
+                          <h3 className="font-display text-xl sm:text-[28px] font-bold text-earth">
                             {activity.title}
                           </h3>
                         </div>
@@ -183,7 +183,7 @@ export default function ActivitiesPage() {
                         </p>
                       </div>
 
-                      <div className="lg:w-64 shrink-0 flex flex-row lg:flex-col gap-4">
+                      <div className="lg:w-64 shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3 sm:gap-4">
                         {activity.stats.map((stat) => (
                           <div
                             key={stat.label}

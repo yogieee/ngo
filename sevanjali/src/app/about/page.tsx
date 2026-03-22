@@ -35,7 +35,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-earth pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-earth pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-moss/10 to-transparent pointer-events-none" />
         <div className="absolute inset-0 noise-overlay" />
 
@@ -106,11 +106,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {values.map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 100}>
-                <div className="glass rounded-xl p-8 lg:p-10">
+                <div className="glass rounded-xl p-5 sm:p-8 lg:p-10">
                   <span className="font-display text-sm text-ash">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-[28px] font-bold text-cream mt-3">
+                  <h3 className="font-display text-xl sm:text-[28px] font-bold text-cream mt-3">
                     {value.title}
                   </h3>
                   <p className="font-body text-sm text-ash mt-2 leading-relaxed">
@@ -205,7 +205,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-6 mt-10 border-t border-cream/10 pt-8">
                 {founder.stats.map((s) => (
                   <div key={s.label}>
-                    <p className="font-display text-[36px] font-light text-turmeric">
+                    <p className="font-display text-[24px] sm:text-[36px] font-light text-turmeric">
                       {s.value}
                     </p>
                     <p className="font-accent text-label text-ash uppercase">

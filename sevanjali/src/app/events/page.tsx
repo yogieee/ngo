@@ -47,7 +47,7 @@ export default function EventsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-earth pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-earth pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 noise-overlay" />
         <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-turmeric/5 to-transparent pointer-events-none" />
 
@@ -71,7 +71,7 @@ export default function EventsPage() {
       <section className="bg-earth pb-16">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
-            <div className="glass rounded-2xl p-8 lg:p-12 overflow-hidden relative">
+            <div className="glass rounded-2xl p-5 sm:p-8 lg:p-12 overflow-hidden relative">
               <div className="flex flex-col lg:flex-row gap-10 items-start">
                 <div className="flex-1">
                   <span className="bg-turmeric/20 text-turmeric px-3 py-1 rounded-full font-body text-xs font-medium backdrop-blur-md">
@@ -109,7 +109,7 @@ export default function EventsPage() {
                   </div>
                 </div>
 
-                <div className="lg:w-[400px] shrink-0 grid grid-cols-2 gap-3">
+                <div className="w-full lg:w-[400px] shrink-0 grid grid-cols-2 gap-3">
                   {ganeshotsava.images.slice(0, 4).map((src, i) => (
                     <div
                       key={i}
@@ -146,7 +146,7 @@ export default function EventsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {upcomingEvents.map((event, i) => (
               <ScrollReveal key={event.title} delay={i * 100}>
-                <div className="glass-light rounded-xl p-8 group hover:bg-white/60 transition-all duration-300 h-full">
+                <div className="glass-light rounded-xl p-5 sm:p-8 group hover:bg-white/60 transition-all duration-300 h-full">
                   <div className="flex items-start justify-between mb-4">
                     <span className="bg-saffron/10 text-saffron px-3 py-1 rounded-full font-body text-xs font-medium">
                       {event.type}

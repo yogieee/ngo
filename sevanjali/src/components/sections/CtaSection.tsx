@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function CtaSection() {
   return (
-    <section className="bg-saffron py-32 relative rounded-t-4xl shadow-[0_-20px_60px_rgba(0,0,0,0.35)]">
+    <section className="bg-saffron py-20 sm:py-32 relative rounded-t-4xl shadow-[0_-20px_60px_rgba(0,0,0,0.35)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
         <ScrollReveal>
           <p className="font-accent text-label text-earth/50 uppercase">

@@ -63,12 +63,12 @@ export function AboutSection() {
                 </motion.div>
               </div>
               {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-terracotta rounded-full flex items-center justify-center">
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-28 sm:h-28 bg-terracotta rounded-full flex items-center justify-center">
                 <div className="text-center">
                   <p className="font-accent text-xs text-cream/80 uppercase tracking-[2px]">
                     Est.
                   </p>
-                  <p className="font-display text-2xl font-light text-cream">
+                  <p className="font-display text-lg sm:text-2xl font-light text-cream">
                     1993
                   </p>
                 </div>

@@ -16,7 +16,7 @@ export function FounderSection() {
     <section id="founder" className="overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left — Parallax Image */}
-        <div ref={imageRef} className="relative min-h-[500px] lg:min-h-[700px] overflow-hidden">
+        <div ref={imageRef} className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[700px] overflow-hidden">
           <motion.div className="absolute inset-0" style={{ y: imageY }}>
             <Image
               src="https://www.sevanjaliprathishtana.com/images/founder.png"
@@ -29,7 +29,7 @@ export function FounderSection() {
         </div>
 
         {/* Right — Content */}
-        <div className="bg-moss px-8 py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
+        <div className="bg-moss px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-24 flex flex-col justify-center">
           <ScrollReveal>
             <SectionLabel className="text-saffron">Leadership</SectionLabel>
 
@@ -48,10 +48,10 @@ export function FounderSection() {
             </p>
 
             {/* Stat Grid */}
-            <div className="grid grid-cols-2 gap-6 mt-10 border-t border-cream/10 pt-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-10 border-t border-cream/10 pt-6 sm:pt-8">
               {founder.stats.map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-[40px] font-light text-turmeric">
+                  <p className="font-display text-[28px] sm:text-[40px] font-light text-turmeric">
                     {s.value}
                   </p>
                   <p className="font-accent text-label text-ash uppercase">
