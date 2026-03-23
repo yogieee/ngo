@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Shield,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const impactIcons = [Heart, GraduationCap, Droplets, HandHeart];
@@ -181,18 +182,29 @@ export default function DonatePage() {
                   <CopyField label="UPI ID" value={donate.upi.upiId} />
                 </div>
 
-                {/* UPI Platforms */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {["PhonePe", "GPay", "PayTM", "BHIM", "BharatPay", "Baroda Pay"].map(
-                    (app) => (
-                      <span
-                        key={app}
-                        className="bg-cream/5 border border-cream/10 text-cream/80 px-3 py-1 rounded-full font-body text-xs backdrop-blur-md"
-                      >
-                        {app}
-                      </span>
-                    )
-                  )}
+                {/* QR Code + UPI Platforms */}
+                <div className="flex gap-6 mb-8 items-center">
+                  <div className="bg-white rounded-xl p-4 shrink-0">
+                    <Image
+                      src="/images/qr-code.avif"
+                      alt="Scan to pay via UPI"
+                      width={200}
+                      height={200}
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-2 content-center">
+                    {["PhonePe", "GPay", "PayTM", "BHIM", "BharatPay", "Baroda Pay"].map(
+                      (app) => (
+                        <span
+                          key={app}
+                          className="bg-cream/5 border border-cream/10 text-cream/80 px-3 py-1 rounded-full font-body text-xs backdrop-blur-md"
+                        >
+                          {app}
+                        </span>
+                      )
+                    )}
+                  </div>
                 </div>
 
                 {/* Steps */}
