@@ -13,11 +13,13 @@ import { UpcomingEventsSection } from "@/components/sections/UpcomingEventsSecti
 import { EventTicker } from "@/components/ui/EventTicker";
 import { getActiveActivities } from "@/lib/actions/activities";
 import { getUpcomingEvents } from "@/lib/actions/events";
+import { getVisibleTestimonials } from "@/lib/actions/testimonials";
 
 export default async function HomePage() {
-  const [activities, upcomingEvents] = await Promise.all([
+  const [activities, upcomingEvents, testimonials] = await Promise.all([
     getActiveActivities(),
     getUpcomingEvents(),
+    getVisibleTestimonials(),
   ]);
 
   return (
@@ -34,7 +36,7 @@ export default async function HomePage() {
         <DiagonalDivider flip color="#1A2118" />
         <ActivitiesSection activities={activities} />
         <DiagonalDivider color="#F3F0E4" />
-        <TestimonialsSection />
+        <TestimonialsSection testimonials={testimonials} />
         <FounderSection />
         <GaneshotsavaSection />
         {upcomingEvents.length > 0 && (

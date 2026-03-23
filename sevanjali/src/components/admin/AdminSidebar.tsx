@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutGrid, Calendar, Users, LogOut } from "lucide-react";
+import { LayoutGrid, Calendar, Users, LogOut, MessageSquareQuote } from "lucide-react";
 import { logoutAction } from "@/lib/actions/auth";
 
 const navItems = [
   { label: "Activities", href: "/admin/activities", icon: LayoutGrid },
   { label: "Events", href: "/admin/events", icon: Calendar },
   { label: "Members", href: "/admin/members", icon: Users },
+  { label: "Testimonials", href: "/admin/testimonials", icon: MessageSquareQuote },
 ];
 
 export function AdminSidebar() {

@@ -184,3 +184,40 @@ INSERT INTO events (title, date, location, description, type) VALUES
   'Ration distribution and welfare assistance for underprivileged families across the taluk.',
   'Community'
 );
+
+-- ============================================
+-- Table: testimonials
+-- ============================================
+CREATE TABLE testimonials (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  course TEXT NOT NULL,
+  quote TEXT NOT NULL,
+  is_visible BOOLEAN DEFAULT true,
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- RLS for testimonials
+ALTER TABLE testimonials ENABLE ROW LEVEL SECURITY;
+
+-- Anyone can view visible testimonials
+CREATE POLICY "Public can view visible testimonials"
+  ON testimonials FOR SELECT
+  USING (is_visible = true);
+
+-- Anyone can insert testimonials (students submit from public site)
+CREATE POLICY "Anyone can submit testimonials"
+  ON testimonials FOR INSERT
+  WITH CHECK (true);
+
+-- Admin full access
+CREATE POLICY "Admin full access to testimonials"
+  ON testimonials FOR ALL
+  USING (auth.uid() IS NOT NULL)
+  WITH CHECK (auth.uid() IS NOT NULL);
+
+-- Seed existing testimonials
+INSERT INTO testimonials (name, course, quote) VALUES
+('Divya Shanker', 'Graduated Engineer', 'I want to thank Sevanjali Trust and its trustee Mr. Krishna Kumar Poonja for supporting me financially to complete my education. Because of his help I am able to fulfill my dream.'),
+('Harinakshi Shetty', 'Engineer', 'I never dreamt of becoming an engineer because I belong to a middle class family. After I completed SSLC I was confused whether I should continue my education. At that same time Sevanjali stepped in.'),
+('Pavithra Lakshmi', 'Engineering Student', 'Sevanjali is a support to continue my studies. After my PUC I had a financial problem to continue. K.K. Poonja has been my inspiration and strength throughout.');
