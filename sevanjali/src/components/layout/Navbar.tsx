@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { BackgroundMusic } from "@/components/ui/BackgroundMusic";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -58,14 +59,15 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA + Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        {/* CTA + Music + Mobile Toggle */}
+        <div className="flex items-center gap-3">
           <Link
             href="/donate"
             className="bg-saffron text-earth px-6 py-2 rounded-sm font-body font-medium text-sm hover:bg-terracotta transition-colors"
           >
             Donate Now
           </Link>
+          <BackgroundMusic />
           <button
             className="lg:hidden text-cream"
             onClick={() => setMobileOpen(!mobileOpen)}
