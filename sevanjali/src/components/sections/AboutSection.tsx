@@ -51,7 +51,7 @@ export function AboutSection() {
           {/* Right Col — Parallax Image */}
           <ScrollReveal delay={200}>
             <div ref={imageRef} className="relative lg:-ml-8">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <motion.div className="absolute inset-0" style={{ y: imageY }}>
                   <Image
                     src="https://www.sevanjaliprathishtana.com/images/gallery/medical-3.jpg"
